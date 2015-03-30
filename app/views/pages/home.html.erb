@@ -1,2 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% @results.each do |result| %>
+<hr>
+<%= is_bangr?(result) %>
+Title: <%= result[:title] %>
+Artist: <%= result[:artist_name] %>
+Id: <%= result[:id] %>
+<% result[:audio_summary].each do |key,value| %>
+<%= key %>
+<%= value %>
+<br>
+<% end %>
+<hr>
+<% end %>
