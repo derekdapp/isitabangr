@@ -1,13 +1,13 @@
 module PagesHelper
 	def is_bangr?(song)
   	score = 0
-  	if song[:audio_summary][:energy] > 0.7
+  	if song[:audio_summary][:energy] > 0.68
   		score += 1
   	end
   	if song[:audio_summary][:tempo] > 130
   		score += 1
   	end
-  	if song[:audio_summary][:acousticness] < 0.083
+  	if song[:audio_summary][:acousticness] < 0.1
   		score += 1
   	end
   	if song[:audio_summary][:danceability] < 0.72

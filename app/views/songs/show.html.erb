@@ -1,2 +1,6 @@
-<h1>Songs#show</h1>
-<p>Find me in app/views/songs/show.html.erb</p>
+title: <%= @song.title %>
+artist: <%= @song.artist %>
+e_id: <%= @song.echonest %>
+downvotes: <%= @song.get_downvotes.count %>
+upvotes: <%= @song.get_upvotes.count %>
+score: <%= @song.score %>

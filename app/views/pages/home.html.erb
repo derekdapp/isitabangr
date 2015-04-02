@@ -1,13 +1,7 @@
-<% @results.each do |result| %>
-<hr>
-<%= is_bangr?(result) %>
-Title: <%= result[:title] %>
-Artist: <%= result[:artist_name] %>
-Id: <%= result[:id] %>
-<% result[:audio_summary].each do |key,value| %>
-<%= key %>
-<%= value %>
-<br>
-<% end %>
-<hr>
+<%= form_tag("/search_echonest", method: "post") do %>
+  <%= label_tag(:song, "Song:") %>
+  <%= text_field_tag(:song) %>
+  <%= label_tag(:artist, "Artist:") %>
+  <%= text_field_tag(:artist) %>
+  <%= submit_tag("Search") %>
 <% end %>
