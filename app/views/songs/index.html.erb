@@ -1,1 +1,6 @@
-<%= @songs.inspect %>
+<% @songs.each do |song| %>
+<%= song.title %>
+<%= song.artist %>
+<%= song.score %>
+<img src="<%= song.image %>">
+<% end %>

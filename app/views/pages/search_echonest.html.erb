@@ -1,12 +1,16 @@
 <%= link_to "go home", root_path %>
 <% @results.each do |result| %>
-<% if result[:tracks][0] %>
+
 <hr>
 <%= is_bangr?(result) %>
 Title: <%= result[:title] %>
 Artist: <%= result[:artist_name] %>
 Id: <%= result[:id] %>
+<% if result[:tracks][0] %>
 <img src="<%= result[:tracks][0][:release_image] %>">
+<% else %>
+<img src="/assets/default.png">
+<% end %>
 <% result[:audio_summary].each do |key,value| %>
 <%= key %>
 <%= value %>
@@ -18,8 +22,14 @@ Id: <%= result[:id] %>
   <%= f.hidden_field :title, value: result[:title] %>
   <%= f.hidden_field :artist, value: result[:artist_name] %>
   <%= f.hidden_field :echonest, value: result[:id] %>
+  <% if result[:tracks][0] %>
+	<%= f.hidden_field :image, value: result[:tracks][0][:release_image] %>
+	<% else %>
+	<%= f.hidden_field :image, value: '/assets/default.png' %>
+  <% end %>
+  
   <%= f.hidden_field 'bangr', value: is_bangr?(result)  %>
   <%= f.submit %>
  <% end %>
-<% end %>
+
 <% end %>
