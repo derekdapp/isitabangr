@@ -4,3 +4,6 @@ e_id: <%= @song.echonest %>
 downvotes: <%= @song.get_downvotes.count %>
 upvotes: <%= @song.get_upvotes.count %>
 score: <%= @song.score %>
+image: <img src="<%= @song.image %>">
+<%= link_to "upvote", upvote_path(id: @song), method: :put %>
+<%= link_to "downvote", downvote_path(id: @song), method: :put %>

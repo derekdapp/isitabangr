@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :songs
   post 'search_echonest', to: 'pages#search_echonest'
+  put "upvote", to: "songs#upvote"
+  put "downvote", to: "songs#downvote"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
