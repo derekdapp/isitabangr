@@ -10,7 +10,7 @@
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Is It A Banger?</h1>
                         
-                        <%= form_tag "/search_echonest", method: "post", :class => "form-inline" do %>
+                        <%= form_tag "/search_echonest", method: "post", :class => "form-inline", remote: true do %>
                         <div class="form-group">
 						  <%#= label_tag(:song, "Song:") %>
 						  <%= text_field_tag :song, nil, class: 'form-control', required: 'true', placeholder: 'Song' %>
@@ -33,28 +33,8 @@
         </div>
     </header>
 
-    <!-- About Section -->
+    <!-- Results Section -->
     <section id="results" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-            	<div class='row'>
-            		<div class='col-md-12'>
-            			<img src="/assets/default.png" >
-            		</div>
-            	</div>
-            	<div class='row'>
-            		<div class='col-md-12'>
-            			<h1> SONG - ARTIST</h1>
-            		</div>
-            	</div>
-            	<div class='row'>
-            		<div class='col-md-12'>
-            			<button class="btn btn-default">Choose</button>
-            		</div>
-            	</div>
-            	<hr>
-            </div>
-        </div>
     </section>
 
     <!-- Download Section -->

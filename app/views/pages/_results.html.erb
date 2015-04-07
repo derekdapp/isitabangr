@@ -1,0 +1,45 @@
+<!-- Results Section -->
+<section id="results" class="container content-section text-center">
+	<% results.each do |result| %>
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+        	<div class='row'>
+        		<div class='col-md-12'>
+        			<% if result[:tracks][0] %>
+					<img src="<%= result[:tracks][0][:release_image] %>">
+					<% else %>
+					<img src="/assets/default.png">
+					<% end %>
+        		</div>
+        	</div>
+            <br>
+        	<div class='row'>
+        		<div class='col-md-12'>
+        			<h1> <%= result[:title] %> - <%= result[:artist_name] %></h1>
+        		</div>
+        	</div>
+        	<div class='row'>
+        		<div class='col-md-12'>
+        			<%= form_for(Song.new) do |f| %>
+					  <%= f.hidden_field :title, value: result[:title] %>
+					  <%= f.hidden_field :artist, value: result[:artist_name] %>
+					  <%= f.hidden_field :echonest, value: result[:id] %>
+					  <% if result[:tracks][0] %>
+						<%= f.hidden_field :image, value: result[:tracks][0][:release_image] %>
+						<% else %>
+						<%= f.hidden_field :image, value: '/assets/default.png' %>
+					  <% end %>
+					  
+					  <%= f.hidden_field 'bangr', value: is_bangr?(result)  %>
+					  <%= f.submit "CHOOSE", :class => 'btn btn-default' %>
+					<% end %>
+        		</div>
+        	</div>
+        	<hr>
+        </div>
+    </div>
+    <% end %>
+</section>
+
+
+
