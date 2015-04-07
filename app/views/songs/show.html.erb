@@ -1,9 +1,28 @@
-title: <%= @song.title %>
-artist: <%= @song.artist %>
-e_id: <%= @song.echonest %>
-downvotes: <%= @song.get_downvotes.count %>
-upvotes: <%= @song.get_upvotes.count %>
-score: <%= @song.score %>
-image: <img src="<%= @song.image %>">
-<%= link_to "upvote", upvote_path(id: @song), method: :put %>
-<%= link_to "downvote", downvote_path(id: @song), method: :put %>
+<!-- Results Section -->
+<section id="results" class="container song-show text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+        	<div class='row'>
+        		<div class='col-md-12'>
+					<img src="<%= @song.image %>">
+        		</div>
+        	</div>
+            <br>
+        	<div class='row'>
+        		<div class='col-md-12'>
+        			<h2> <%= @song.title %> - <%= @song.artist %></h2>
+        			<% if @song.score >= 0 %>
+        				<h1 class="yes">IS A BANGER</h1>
+        			<% else %>
+        				<h1>IS NOT A BANGER</h1>
+        			<% end %>
+        		</div>
+        	</div>
+        	<span>Do you think this song is a banger? </span>
+        	<div class='row'>
+        		<%= link_to "YES", upvote_path(id: @song), method: :put, class: 'btn btn-default' %>
+				<%= link_to "NO!", downvote_path(id: @song), method: :put, class: 'btn btn-default' %>
+        	</div>
+        </div>
+    </div>
+</section>

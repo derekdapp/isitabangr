@@ -151,7 +151,7 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(/assets/img/intro-bg.jpg) no-repeat bottom center scroll;
+    background: url(/assets/img/concert.png) no-repeat bottom center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -265,11 +265,11 @@ a:focus {
     padding-top: 100px;
 }
 
-.download-section {
+.about-section {
     width: 100%;
     padding: 50px 0;
     color: #fff;
-    background: url(/assets/img/downloads-bg.jpg) no-repeat center center scroll;
+    background: url(/assets/img/skinny.png) no-repeat center center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -288,7 +288,7 @@ a:focus {
         padding-top: 250px;
     }
 
-    .download-section {
+    .about-section {
         padding: 100px 0;
     }
 
