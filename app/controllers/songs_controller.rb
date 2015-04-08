@@ -5,6 +5,9 @@ class SongsController < ApplicationController
 
   def show
     @song = Song.find(params[:id])
+    @upvotes = @song.get_upvotes.size
+    @downvotes = @song.get_downvotes.size
+    @total = @upvotes + @downvotes
   end
 
   def new

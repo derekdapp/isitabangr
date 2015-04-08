@@ -4,9 +4,11 @@ class PagesController < ApplicationController
   end
 
   def search_echonest
-  	song = Echonest::Song.new('***REMOVED***')
-  	s_params = { results: 5, bucket: ['audio_summary','id:7digital-US','tracks'],  artist: params[:artist], title: params[:song], sort: 'song_hotttnesss-desc'}
-    @results = song.search(s_params)
+  	# song = Echonest::Song.new('***REMOVED***')
+  	# s_params = { results: 5, bucket: ['audio_summary','id:spotify','tracks'],  artist: params[:artist], title: params[:song], sort: 'song_hotttnesss-desc'}
+   #  @results = song.search(s_params)
+
+   tracks = RSpotify::Track.search('Breezeblocks')
 
   end
 

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   resources :songs
+  get 'songs/show'
   post 'search_echonest', to: 'pages#search_echonest'
   put "upvote", to: "songs#upvote"
   put "downvote", to: "songs#downvote"

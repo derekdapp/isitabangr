@@ -35,6 +35,7 @@ gem 'echonest-ruby-api'
 gem 'devise'
 gem 'acts_as_votable'
 gem 'pry'
+gem 'rspotify'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
