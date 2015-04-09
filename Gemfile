@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -39,6 +39,7 @@ gem 'rspotify'
 gem 'httparty'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rails_12factor'
+gem 'puma'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
