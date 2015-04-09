@@ -63,6 +63,9 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.23)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (1.0.2)
+    dotenv-rails (1.0.2)
+      dotenv (= 1.0.2)
     echonest-ruby-api (0.8.0)
       httparty
       multi_json
@@ -212,6 +215,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
+  dotenv-rails
   echonest-ruby-api
   httparty
   jbuilder (~> 2.0)

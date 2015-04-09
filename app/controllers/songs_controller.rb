@@ -21,7 +21,7 @@ class SongsController < ApplicationController
       redirect_to @song
     else
       puts "SONG NEEDS TO BE CREATED!!!!!"
-      echonest = HTTParty.get("http://developer.echonest.com/api/v4/song/profile?api_key=***REMOVED***&bucket=audio_summary&track_id=" + params[:song][:spotify_uri])
+      echonest = HTTParty.get("http://developer.echonest.com/api/v4/song/profile?api_key="+ENV['ECHONEST_KEY']+"&bucket=audio_summary&track_id=" + params[:song][:spotify_uri])
       bangr = is_bangr?(echonest['response']['songs'][0]['audio_summary'])
       @bot = User.find_by email: 'bot@isitabangr.com'
       @song = Song.new(song_params)
