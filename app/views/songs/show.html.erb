@@ -4,7 +4,7 @@
         <div class="col-lg-8 col-lg-offset-2">
         	<div class='row'>
         		<div class='col-md-12'>
-					<img src="<%= @song.image %>">
+					<img class="song-img" src="<%= @song.image %>">
         		</div>
         	</div>
             <br>
@@ -36,7 +36,7 @@
         		<%= link_to "Login to Vote", new_user_session_path, class: 'btn btn-default' %>
         	</div>
         	<% end %>
-        	<span>Yes: <%= @upvotes %> No: <%= @downvotes %></span>
+        	<!-- <span>Yes: <%= @upvotes %> No: <%= @downvotes %></span> -->
 
         	
 

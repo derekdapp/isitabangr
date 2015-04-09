@@ -1,5 +1,5 @@
 $( "#results" ).replaceWith( "<%= j render partial: 'pages/results', locals: {results: @results} %>" );
-<% if @results[0] == nil %>
+<% if @results == nil %>
 $( "#results" ).replaceWith( "<%= j render partial: 'pages/no_results'%>" );
 <% end %>
 $.scrollTo($("#results"), 800)
