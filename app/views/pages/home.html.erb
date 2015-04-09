@@ -6,7 +6,7 @@
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Is It A Banger?</h1>
                         
-                        <%= form_tag "/search_echonest", method: "post", :class => "form-inline", remote: true do %>
+                        <%= form_tag "/search_spotify", method: "post", :class => "form-inline", remote: true do %>
                         <div class="form-group">
 						  <%#= label_tag(:song, "Song:") %>
 						  <%= text_field_tag :query, nil, class: 'form-control', required: 'true', placeholder: 'Song Search' %>

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :songs
   get 'songs/show'
-  post 'search_echonest', to: 'pages#search_echonest'
+  post 'search_spotify', to: 'pages#search_spotify'
   put "upvote", to: "songs#upvote"
   put "downvote", to: "songs#downvote"
 
