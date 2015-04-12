@@ -1,9 +1,16 @@
 <br>
-<div class="row">
-    <div class="col-sm-12"
-    <iframe src="//go.padstm.com/?id=272237&t=iframe" style="width:728px;height:90px;border:0;overflow:hidden;max-width:100%"></iframe>
+<div style="text-align: center;padding-top:10em;max-width:100%;">
+    <div id="prop"></div>
 </div>
-</div>
+<script>
+  if (window.screen.availWidth >= 768) { 
+    $('#prop').html('<script src="//go.padstm.com/?id=272237"></script>');
+  } else if ((window.screen.availWidth < 768) && (window.screen.availWidth >= 480)) {
+    $('#prop').html('<script src="//go.padstm.com/?id=272243"></script>');
+  } else { 
+    $('#prop').html('<script src="//go.mobtrks.com/notice.php?p=272246&interstitial=1"></script>');
+  }  
+</script>
 
 <!-- About Section -->
 <section id="about" class="content-section text-center">
