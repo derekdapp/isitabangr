@@ -5,10 +5,13 @@
 <script>
   if (window.screen.availWidth >= 768) { 
     $('#prop').html("<iframe src=\"//go.padstm.com/?id=272237&t=iframe&var=45616\" style=\"width:728px;height:90px;border:0;overflow:hidden;\"></iframe>");
+    alert("big");
   } else if ((window.screen.availWidth < 768) && (window.screen.availWidth >= 480)) {
     $('#prop').html("<iframe src=\"//go.padstm.com/?id=272245&t=iframe&var=45616\" style=\"width:468px;height:60px;border:0;overflow:hidden;\"></iframe>");
+    alert("smaller");
   } else { 
     $('#prop').html("<iframe src=\"//go.padstm.com/?id=272249&t=iframe\" style=\"width:320px;height:50px;border:0;overflow:hidden;\"></iframe>");
+    alert("smallest");
   }  
 </script>
 
