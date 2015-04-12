@@ -60,7 +60,7 @@ class SongsController < ApplicationController
   end
   private
   def song_params
-      params.require(:song).permit(:spotify, :title, :artist, :image)
+      params.require(:song).permit(:spotify, :title, :artist, :image, :preview)
   end
 
   def is_bangr?(song)

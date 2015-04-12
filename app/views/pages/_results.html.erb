@@ -27,7 +27,7 @@
 					  <%= f.hidden_field :artist, value: result.artists.first.name %>
 					  <%= f.hidden_field :spotify, value: result.id %>
 					  <%= f.hidden_field :image, value: result.album.images.first["url"] %>
-					  
+					  <%= f.hidden_field :preview, value: result.preview_url
 					  <%= f.hidden_field 'spotify_uri', value: result.uri  %>
 					  <%= f.submit "CHOOSE", :class => 'btn btn-default' %>
 					<% end %>
