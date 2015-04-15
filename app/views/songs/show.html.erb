@@ -18,7 +18,6 @@
             <br>
         	<div class='row'>
         		<div class='col-md-12'>
-                    <%= @song.preview %>
         			<h2> <%= @song.title %> - <%= @song.artist %></h2>
         			<% if @song.score >= 0 %>
         				<h1 class="yes">IS A BANGER</h1>
@@ -53,7 +52,7 @@
         var audio = new Audio('<%= @song.preview %>');
         function play() {
             audio.play();
-            $('#play-control').replaceWith("<a onClick=\"stop();\" id=\"play-control\"><span class=\"fa fa-stop fa-5x\"></span></a>")
+            $('#play-control').replaceWith("<a onClick=\"stop();\" id=\"play-control\"><span class=\"fa fa-pause fa-5x\"></span></a>")
         }
         function stop() {
             audio.pause();

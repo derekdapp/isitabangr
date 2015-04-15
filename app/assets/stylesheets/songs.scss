@@ -4,3 +4,38 @@
 .song-show{
 	padding-top: 150px;
 }
+
+.profile-img-container {
+    position: relative;
+    display: inline-block; /* added */
+    overflow: hidden; /* added */
+}
+
+.profile-img-container:hover img {
+    opacity: 0.5
+}
+.profile-img-container a {
+    opacity: 1; /* added */
+    top: 50%; /* added */
+    z-index: 500;
+}
+/* added */
+.profile-img-container a span {
+    top: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    
+}
+/* added */
+.profile-img-container a {
+    display: block;
+    position: absolute;
+    top: -20%;
+    opacity: 1;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    color: inherit;
+}
