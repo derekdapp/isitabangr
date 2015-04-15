@@ -1,4 +1,16 @@
-
+<br>
+<div style="text-align: center;padding-top:10em;max-width:100%;">
+    <div id="prop"></div>
+</div>
+<script>
+  if ($(window).width() >= 768) { 
+    $('#prop').html("<iframe src=\"//go.padstm.com/?id=272237&t=iframe&var=45616\" style=\"width:728px;height:90px;border:0;overflow:hidden;\"></iframe>");
+  } else if (($(window).width() < 768) && ($(window).width() >= 480)) {
+    $('#prop').html("<iframe src=\"//go.padstm.com/?id=272245&t=iframe&var=45616\" style=\"width:468px;height:60px;border:0;overflow:hidden;\"></iframe>");
+  } else { 
+    $('#prop').html("<iframe src=\"//go.padstm.com/?id=272249&t=iframe\" style=\"width:320px;height:50px;border:0;overflow:hidden;\"></iframe>");
+  }  
+</script>
 
 <!-- About Section -->
 <section id="about" class="content-section text-center">
