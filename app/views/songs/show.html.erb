@@ -4,12 +4,21 @@
         <div class="col-lg-8 col-lg-offset-2">
         	<div class='row'>
         		<div class='col-md-12'>
-					<img class="song-img" src="<%= @song.image %>">
+					
+                    <div class="profile-img-container">
+                        <img class="song-img img-thumbnail img-responsive" src="<%= @song.image %>">
+                        <a onClick="play();" id="play-control">
+                            <span class="fa fa-play fa-5x"></span>
+                        </a>
+
+                    </div>
+
         		</div>
         	</div>
             <br>
         	<div class='row'>
         		<div class='col-md-12'>
+                    <%= @song.preview %>
         			<h2> <%= @song.title %> - <%= @song.artist %></h2>
         			<% if @song.score >= 0 %>
         				<h1 class="yes">IS A BANGER</h1>
@@ -41,7 +50,15 @@
     </div>
 </section>
 <script type="text/javascript">
-
+        var audio = new Audio('<%= @song.preview %>');
+        function play() {
+            audio.play();
+            $('#play-control').replaceWith("<a onClick=\"stop();\" id=\"play-control\"><span class=\"fa fa-stop fa-5x\"></span></a>")
+        }
+        function stop() {
+            audio.pause();
+            $('#play-control').replaceWith("<a onClick=\"play();\" id=\"play-control\"><span class=\"fa fa-play fa-5x\"></span></a>")
+        }
 
 
 </script>
