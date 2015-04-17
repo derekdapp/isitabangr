@@ -9,4 +9,9 @@ class PagesController < ApplicationController
 	end
   end
 
+  def random
+  	@song = Song.offset(rand(Song.count)).first
+  	redirect_to song_path(@song)
+  end
+
 end

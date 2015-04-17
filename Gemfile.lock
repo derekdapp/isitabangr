@@ -66,9 +66,6 @@ GEM
     dotenv (1.0.2)
     dotenv-rails (1.0.2)
       dotenv (= 1.0.2)
-    echonest-ruby-api (0.8.0)
-      httparty
-      multi_json
     erubis (2.7.0)
     execjs (2.4.0)
     faraday (0.9.1)
@@ -223,7 +220,6 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   dotenv-rails
-  echonest-ruby-api
   httparty
   jbuilder (~> 2.0)
   jquery-rails

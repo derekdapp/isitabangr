@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'search_spotify', to: 'pages#search_spotify'
   put "upvote", to: "songs#upvote"
   put "downvote", to: "songs#downvote"
+  get "random", to: "pages#random"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
