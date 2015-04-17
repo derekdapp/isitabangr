@@ -31,7 +31,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'echonest-ruby-api'
+# gem 'echonest-ruby-api'
 gem 'devise'
 gem 'acts_as_votable'
 gem 'pry'
