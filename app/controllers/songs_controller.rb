@@ -8,6 +8,7 @@ class SongsController < ApplicationController
     @upvotes = @song.get_upvotes.size
     @downvotes = @song.get_downvotes.size
     @total = @upvotes + @downvotes
+    @spotify_play_url = "https://open.spotify.com/track/" + @song.spotify
   end
 
   def new
