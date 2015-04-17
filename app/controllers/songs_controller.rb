@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
   def index
-    @songs = Song.all
+    redirect_to root_path
   end
 
   def show
@@ -12,6 +12,7 @@ class SongsController < ApplicationController
   end
 
   def new
+    redirect_to root_path
   end
 
   def create
@@ -40,12 +41,15 @@ class SongsController < ApplicationController
   end
 
   def update
+    redirect_to root_path
   end
 
   def edit
+    redirect_to root_path
   end
 
   def destroy
+    redirect_to root_path
   end
 
   def upvote
