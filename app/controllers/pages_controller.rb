@@ -14,4 +14,9 @@ class PagesController < ApplicationController
   	redirect_to song_path(@song)
   end
 
+  def last
+    @song = Song.last
+    redirect_to song_path(@song)
+  end
+
 end
