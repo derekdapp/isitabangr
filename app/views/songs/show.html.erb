@@ -26,6 +26,11 @@
         			<% end %>
         		</div>
         	</div>
+            <% if @song.score >= 0 %>
+                <span><%= ((@upvotes.to_f / @total.to_f)*100).round(2) %>% of people agree.</span>
+            <% else %>
+                <span><%= ((@downvotes.to_f / @total.to_f)*100).round(2) %>% of people agree.</span>
+            <% end %>
         	<% if user_signed_in? && !current_user.voted_on?(@song) %>
         	<span>Do you think this song is a banger? </span>
         	<div class='row'>
@@ -33,11 +38,11 @@
 				<%= link_to "NO!", downvote_path(id: @song), method: :put, class: 'btn btn-default' %>
         	</div>
         	<% elsif user_signed_in? && current_user.voted_on?(@song) %>
-        	<% if @song.score >= 0 %>
-				<span><%= ((@upvotes.to_f / @total.to_f)*100).round(2) %>% of people agree.</span>
-			<% else %>
-				<span><%= ((@downvotes.to_f / @total.to_f)*100).round(2) %>% of people agree.</span>
-			<% end %>
+        	<%# if @song.score >= 0 %>
+				<!-- <span><%= ((@upvotes.to_f / @total.to_f)*100).round(2) %>% of people agree.</span> -->
+			<%# else %>
+				<!-- <span><%= ((@downvotes.to_f / @total.to_f)*100).round(2) %>% of people agree.</span> -->
+			<%# end %>
         	<% elsif !user_signed_in? %>
         	<span>Do you think this song is a banger? </span>
         	<div class='row'>
