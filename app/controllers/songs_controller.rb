@@ -82,10 +82,6 @@ class SongsController < ApplicationController
     if song['danceability'] < 0.72
       score += 1
     end
-    if score >= 3
-      return true
-    else
-      return false
-    end
+    return score >= 3
   end
 end
