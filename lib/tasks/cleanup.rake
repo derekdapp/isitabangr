@@ -11,7 +11,6 @@ namespace :cleanup do
 
   task scheduled_cleanup_db: :environment do
   	if Date.today.day == 2
-	  #do something
 	  	songs = Song.all
 	  	songs_to_be_deleted = []
 	  	songs.each do |song|
