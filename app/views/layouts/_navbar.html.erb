@@ -20,22 +20,22 @@
                 <li>
                     <a class="page-scroll" href="/">Start Over</a>
                 </li>
-                <li>
+                <!-- <li>
                     <a class="page-scroll" href="/random">Random</a>
-                </li>
+                </li> -->
                 <li>
                     <a class="page-scroll" href="#about">About</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="#contact">Contact</a>
                 </li>
-                <li>
-                    <% if user_signed_in? %>
-                        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-                    <% else %>
-                      <%= link_to('Login', new_user_session_path)  %> 
-                    <% end %>
-                </li>
+                <!-- <li>
+                    <%# if user_signed_in? %>
+                        <%#= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+                    <%# else %>
+                      <%#= link_to('Login', new_user_session_path)  %> 
+                    <%# end %>
+                </li> -->
             </ul>
         </div>
         <!-- /.navbar-collapse -->

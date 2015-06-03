@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   put "downvote", to: "songs#downvote"
   get "random", to: "pages#random"
   get "last", to: "pages#last"
+  get "banger", to: "pages#banger"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

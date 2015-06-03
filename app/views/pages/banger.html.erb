@@ -1,0 +1,45 @@
+<!-- Results Section -->
+<section id="results" class="container song-show text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+        	<div class='row'>
+        		<div class='col-md-12'>
+					
+                    <div class="profile-img-container">
+                        <img class="song-img img-thumbnail img-responsive" src="<%= @image %>">
+                        <a onClick="play();" id="play-control">
+                            <span class="fa fa-play fa-5x"></span>
+                        </a>
+
+                    </div>
+
+        		</div>
+        	</div>
+            <br>
+        	<div class='row'>
+        		<div class='col-md-12'>
+        			<h2> <%= @title %> - <%= @artist %></h2>
+        			<% if @is_bangr == "true" %>
+        				<h1 class="yes">IS A BANGER</h1>
+        			<% else %>
+        				<h1>IS NOT A BANGER</h1>
+        			<% end %>
+        		</div>
+        	</div>
+            
+            <br>
+            <a href="<%= @spotify_play_url %>">Play on Spotify</a>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+        var audio = new Audio('<%= @preview %>');
+        function play() {
+            audio.play();
+            $('#play-control').replaceWith("<a onClick=\"stop();\" id=\"play-control\"><span class=\"fa fa-pause fa-5x\"></span></a>")
+        }
+        function stop() {
+            audio.pause();
+            $('#play-control').replaceWith("<a onClick=\"play();\" id=\"play-control\"><span class=\"fa fa-play fa-5x\"></span></a>")
+        }
+</script>

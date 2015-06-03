@@ -3,12 +3,16 @@ class SongsController < ApplicationController
     redirect_to root_path
   end
 
+  # def show
+  #   @song = Song.find(params[:id])
+  #   @upvotes = @song.get_upvotes.size
+  #   @downvotes = @song.get_downvotes.size
+  #   @total = @upvotes + @downvotes
+  #   @spotify_play_url = "https://open.spotify.com/track/" + @song.spotify
+  # end
+
   def show
-    @song = Song.find(params[:id])
-    @upvotes = @song.get_upvotes.size
-    @downvotes = @song.get_downvotes.size
-    @total = @upvotes + @downvotes
-    @spotify_play_url = "https://open.spotify.com/track/" + @song.spotify
+    redirect_to root_path
   end
 
   def new
@@ -17,27 +21,27 @@ class SongsController < ApplicationController
 
   def create
     spotify = params[:song][:spotify]
-    @song = Song.find_by spotify: spotify
-    if @song != nil
-      puts "SONG ALREADY EXISTS!!!!!"
-      redirect_to @song
-    else
-      puts "SONG NEEDS TO BE CREATED!!!!!"
+    # @song = Song.find_by spotify: spotify
+    # if @song != nil
+    #   puts "SONG ALREADY EXISTS!!!!!"
+    #   redirect_to @song
+    # else
+      # puts "SONG NEEDS TO BE CREATED!!!!!"
       echonest = HTTParty.get("http://developer.echonest.com/api/v4/song/profile?api_key="+ENV['ECHONEST_KEY']+"&bucket=audio_summary&bucket=song_type&track_id=" + params[:song][:spotify_uri])
       bangr = is_bangr?(echonest['response']['songs'][0]['audio_summary'],echonest['response']['songs'][0]['song_type'])
-      @bot = User.find_by email: 'bot@isitabangr.com'
+      # @bot = User.find_by email: 'bot@isitabangr.com'
       @song = Song.new(song_params)
-      if @song.save
-        if bangr
-          @song.liked_by @bot
-        else
-          @song.downvote_from @bot
-        end
-        redirect_to @song
-      else
-        redirect_to root
-      end
-    end
+      # if @song.save
+      #   if bangr
+      #     @song.liked_by @bot
+      #   else
+      #     @song.downvote_from @bot
+      #   end
+      redirect_to banger_path(title: @song.title, spotify: @song.spotify, image: @song.image, artist: @song.artist, preview: @song.preview, is_bangr: bangr)
+      # else
+      #   redirect_to root
+      # end
+    # end
   end
 
   def update
