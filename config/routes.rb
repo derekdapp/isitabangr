@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # devise_for :users
   root 'pages#home'
 
   resources :songs
   get 'songs/show'
   post 'search_spotify', to: 'pages#search_spotify'
-  put "upvote", to: "songs#upvote"
-  put "downvote", to: "songs#downvote"
-  get "random", to: "pages#random"
-  get "last", to: "pages#last"
+  # put "upvote", to: "songs#upvote"
+  # put "downvote", to: "songs#downvote"
+  # get "random", to: "pages#random"
+  # get "last", to: "pages#last"
   get "banger", to: "pages#banger"
 
   # The priority is based upon order of creation: first created -> highest priority.
