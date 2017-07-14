@@ -23,8 +23,21 @@ class SongsController < ApplicationController
       redirect_to @song
     else
       puts "SONG NEEDS TO BE CREATED!!!!!"
-      echonest = HTTParty.get("http://developer.echonest.com/api/v4/song/profile?api_key="+ENV['ECHONEST_KEY']+"&bucket=audio_summary&bucket=song_type&track_id=" + params[:song][:spotify_uri])
-      bangr = is_bangr?(echonest['response']['songs'][0]['audio_summary'],echonest['response']['songs'][0]['song_type'])
+      token = HTTParty.post(
+      "https://accounts.spotify.com/api/token",
+      :headers => {
+        "Authorization" => "Basic #{ENV['SPOTIFY_KEY']}"
+      },
+      :body => {
+        "grant_type" => "client_credentials"
+      })
+      response = HTTParty.get(
+      "https://api.spotify.com/v1/audio-features/#{params[:song][:spotify]}",
+      :headers => {
+        "Authorization" => "Bearer #{token['access_token']}",
+        "Accept" =>  "application/json"
+      })
+      bangr = is_bangr?(response)
       @bot = User.find_by email: 'bot@isitabangr.com'
       @song = Song.new(song_params)
       if @song.save
@@ -68,7 +81,7 @@ class SongsController < ApplicationController
       params.require(:song).permit(:spotify, :title, :artist, :image, :preview)
   end
 
-  def is_bangr?(song,song_type)
+  def is_bangr?(song)
     score = 0
     if song['energy'] > 0.68
       score += 1
@@ -79,13 +92,14 @@ class SongsController < ApplicationController
     if song['acousticness'] < 0.1
       score += 1
     end
+    # TODO make a better algo with the new data from spotify
     # if song['danceability'] < 0.72
     #   score += 1
     #   puts 'has good danceability'
     # end
-    if song_type.to_a.include? 'electric'
-      score += 1 
-    end
+    # if song_type.to_a.include? 'electric'
+    #   score += 1
+    # end
     return score >= 3
   end
 end

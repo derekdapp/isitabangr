@@ -2,4 +2,6 @@ $( "#results" ).replaceWith( "<%= j render partial: 'pages/results', locals: {re
 <% if @results == [] %>
 $( "#results" ).replaceWith( "<%= j render partial: 'pages/no_results'%>" );
 <% end %>
+console.log("made it here")
 $.scrollTo($("#results"), 800)
+$( "#song-search-btn" ).attr('value', 'Search');

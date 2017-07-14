@@ -67,6 +67,7 @@ GEM
     dotenv-rails (1.0.2)
       dotenv (= 1.0.2)
     erubis (2.7.0)
+    excon (0.57.1)
     execjs (2.4.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
@@ -180,6 +181,8 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     slop (3.6.0)
+    spotify-client (0.0.10)
+      excon (~> 0.37)
     spring (1.3.3)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -231,7 +234,14 @@ DEPENDENCIES
   rspotify
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  spotify-client
   spring
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+
+RUBY VERSION
+   ruby 2.1.2p95
+
+BUNDLED WITH
+   1.15.1

@@ -10,27 +10,27 @@
 					<%# else %>
 					<!-- <img src="/assets/default.png"> -->
 					<%# end %>
-                    <img class="result-img" src="<%= result.album.images.first["url"] %>">
+          <img class="result-img" src="<%= result[:image] %>">
         		</div>
         	</div>
             <br>
         	<div class='row'>
         		<div class='col-md-12'>
-        			<h1> <%= result.name %> - <%= result.artists.first.name %></h1>
-        			
+        			<h1> <%= result[:name] %> - <%= result[:artist] %></h1>
+
         		</div>
         	</div>
         	<div class='row'>
         		<div class='col-md-12'>
-        			<%= form_for(Song.new) do |f| %>
-					  <%= f.hidden_field :title, value: result.name %>
-					  <%= f.hidden_field :artist, value: result.artists.first.name %>
-					  <%= f.hidden_field :spotify, value: result.id %>
-					  <%= f.hidden_field :image, value: result.album.images.first["url"] %>
-					  <%= f.hidden_field :preview, value: result.preview_url %>
-					  <%= f.hidden_field 'spotify_uri', value: result.uri  %>
-					  <%= f.submit "CHOOSE", :class => 'btn btn-default' %>
-					<% end %>
+        		<%= form_for(Song.new) do |f| %>
+						  <%= f.hidden_field :title, value: result[:name] %>
+						  <%= f.hidden_field :artist, value: result[:artist] %>
+						  <%= f.hidden_field :spotify, value: result[:spotify_id] %>
+						  <%= f.hidden_field :image, value: result[:image] %>
+						  <%= f.hidden_field :preview, value: result[:preview_url] %>
+						  <%= f.hidden_field 'spotify_uri', value: result[:spotify_uri]  %>
+						  <%= f.submit "CHOOSE", :class => 'btn btn-default' %>
+						<% end %>
         		</div>
         	</div>
         	<hr>
@@ -38,6 +38,3 @@
     </div>
     <% end %>
 </section>
-
-
-

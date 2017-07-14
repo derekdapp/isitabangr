@@ -5,19 +5,19 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Is It A Banger?</h1>
-                        
+
                         <%= form_tag "/search_spotify", method: "post", :class => "form-inline", remote: true do %>
                         <div class="form-group">
 						  <%#= label_tag(:song, "Song:") %>
 						  <%= text_field_tag :query, nil, class: 'form-control', required: 'true', placeholder: 'Song Search' %>
 						</div>
-						
+
 						<div class='form-group'>
-						  <%= submit_tag "Search", class: 'btn btn-default' %>
+						  <%= submit_tag "Search", class: 'btn btn-default', id: "song-search-btn", :onclick => "this.value = 'This will take a moment.';"  %>
 						</div>
 						<% end %>
                         <div class='form-group'>
-                            <br>    
+                            <br>
                             <a href="/random" class="btn btn-default">Random</a>
                         </div>
                     </div>
@@ -30,7 +30,3 @@
     <!-- <section id="results" class="container content-section text-center">
     </section> -->
     <div id="results"></div>
-
-
-
-

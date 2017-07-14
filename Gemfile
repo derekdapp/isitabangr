@@ -36,6 +36,7 @@ gem 'devise'
 gem 'acts_as_votable'
 gem 'pry'
 gem 'rspotify'
+gem 'spotify-client'
 gem 'httparty'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rails_12factor'
@@ -51,4 +52,3 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
